@@ -1,0 +1,10 @@
+<sql query="SELECT * FROM AirSmellData WHERE userId=? LIMIT ? OFFSET ? "
+   intParams="UPDATE.message.from.id,THIS.limit, THIS.offset"
+   cid="airSmellCount"
+   resultType="[AirSmellData]"/>
+<view name="EditPointMenu">
+  <%   let airsmelldata_array = sqlCustomResult["AirSmellData"];
+    for airsmelldata in airsmelldata_array
+
+  %>
+</view>

@@ -1,0 +1,13 @@
+[package]
+name = "rustdom"
+version = "0.1.0"
+authors = ["Mikhail Sinelnikov <msin87@yandex.ru>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.4.10"
+sailfish = "0.3.3"
+mysql = "*"
+roxmltree = "*"

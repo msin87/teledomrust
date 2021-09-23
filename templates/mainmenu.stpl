@@ -1,0 +1,8 @@
+<view name = "MainMenu">
+	<Message>
+		Здравствуй, Heavy87
+		<Button text="Установить точку" navTo="SendDataMenu"/>
+  		<Button text="Показать карту" navTo="MapMenu"/>
+  		<Button text="Редактировать точки" navTo="EditDataMenu"/>
+	</Message>
+</view>

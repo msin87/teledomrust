@@ -1,0 +1,24 @@
+<view name = "AirSmellMenu">
+	<Message>
+		Оцените запах воздуха по шкале от 0 (не пахнет) до 2 (ужасно пахнет). При желании, можете оставить комментарий в строке ввода текста.
+		Ваши текущие координаты: <field cid="locationField" name="location" form_cid="airSmellForm">?</field>
+
+		<Keyboard type="inline">
+			<form cid="airSmellForm"
+				  onSuccessAlert="Данные переданы успешно" 
+				  onSuccessClearForm="true"
+			  	  onErrorAlert="Ошибка в передаче данных, обратитесь к администратору"
+			  	  onErrorClearForm="false">
+				<Button text="0" type="checkbox" name="airsmell"/>
+      			<Button text="1" type="checkbox" name="airsmell" />
+      			<Button text="2" type="checkbox" name="airsmell"/>
+      			<Button text="Передать данные" type="submit" />
+			</form>
+      		<Button text="Назад" navTo="MainMenu" onClickRemoveBottomKeyboard="true"/>
+		</Keyboard>
+	</Message>
+	<Message cid="commentHint"/>
+	<BottomKeyboard>
+		<Button text="Уточнить координаты" requestLocation="true" name="location" thenSendDataToCid="locationField"/>
+	</BottomKeyboard>
+</view>
