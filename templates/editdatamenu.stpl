@@ -1,9 +1,0 @@
-<sqlExecute file="sql/airsmellcount.stpl" asIntField="airSmellCount"/>
-<view name="EditDataMenu">
-  <% if sqlIntResult["airSmellCount"]>0 { %>
-    <Button> Запах: <%=sqlIntResult["airSmellCount"] %> </Button>
-  <% } %>
-  <% if sqlIntResult["airSmellCount"]>0 { %>
-    <Button> Задымление: <%=sqlIntResult["airSmokeCount"] %> </Button>
-  <% } %>
-</view>

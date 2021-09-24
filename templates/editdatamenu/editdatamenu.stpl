@@ -1,0 +1,7 @@
+<view name="EditDataMenu">
+  <%
+    let result:Option<i16> = sql_connection.query_first("SELECT COUNT(*) FROM airdata").unwrap();
+    if result.is_some() { %>
+    <Button> Запах: <%=result.unwrap() %> </Button>
+  <% } %>
+</view>
