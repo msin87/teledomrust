@@ -1,37 +1,26 @@
 #[cfg(test)]
 mod tests {
-    use rustdom::{AirSmellData, SmellStrength};
-    use sailfish::TemplateOnce;
-    use std::collections::HashMap;
+    use std::fs::read_to_string;
+    use roxmltree::Document;
 
-    #[derive(TemplateOnce)]
-    #[template(path="editdatamenu.stpl")]
-    struct EditDataMenuTemplate<'a>{
-        userId: i64,
-        sqlIntResult: HashMap<&'a str, i32>
+    fn get_valid_document(text: &str) -> Option<Document> {
+        match roxmltree::Document::parse(text) {
+            Ok(document) => {
+                if document.root_element().tag_name().name().eq("view") {
+                    return Some(document);
+                }
+                None
+            }
+            Err(e) => {
+                eprintln!("{}", e);
+                None
+            }
+        }
     }
     #[test]
-    fn it_works(){
-        // let air_smell = AirSmellData{
-        //     id: 0,
-        //     user_id: 0,
-        //     smell_strength: SmellStrength::None,
-        //     latitude: 0.0,
-        //     longitude: 0.0,
-        //     time_epoch: 0,
-        //     comment: "",
-        //     canceled: false,
-        //     claims: vec![]
-        // };
-        let mut sqlIntResult = HashMap::new();
-        sqlIntResult.insert(String::from("airSmellCount"),99);
-        sqlIntResult.insert(String::from("otherCounter"),12);
-
-        let ctx = EditDataMenuTemplate{
-            userId: 545,
-            sqlIntResult: Default::default()
-        };
-        println!("{}",ctx.render_once().unwrap());
-        assert_eq!(2+2,4)
+    fn should_send_new_message(){
+        let photo_menu = get_valid_document(read_to_string("templates/test/photo_view.xml").unwrap().as_str());
+        let message_menu = get_valid_document(read_to_string("templates/test/message_view.xml").unwrap().as_str());
+        photo_menu.
     }
 }

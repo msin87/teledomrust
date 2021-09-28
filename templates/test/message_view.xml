@@ -1,0 +1,16 @@
+<view name = "SendDataMenu">
+    <Message>
+        Выберите тип события, который вы хотите добавить:
+        <Keyboard>
+            <btn text="Запах воздуха" navTo="AirSmellMenu"/>
+            <btn text="Задымление" navTo="AirSmokeMenu"/>
+            <btn text="Выбросы в атмосферу" navTo="AirEmissionsMenu"/>
+            <btn text="Загрязнение рек или озер" navTo="RiverPolutionMenu"/>
+            <btn text="Незаконная свалка" navTo="IllegalDumpMenu"/>
+            <btn text="Плохое качество поды из-под крана" navTo="HomeWaterMenu"/>
+            <btn text="Вырубка леса" navTo="DeforestationMenu"/>
+            <btn text="Лесной пожар" navTo="ForestFireMenu"/>
+            <btn text="Назад" navTo="MainMenu"/>
+        </Keyboard>
+    </Message>
+</view>

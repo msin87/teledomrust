@@ -1,0 +1,11 @@
+<view name="PhotoView">
+    <Photo inputFile = "c:\test.jpg">
+        <caption>Супербупер фото</caption>
+        <Keyboard>
+            <btn text="1"/>
+        </Keyboard>
+    </Photo>
+    <BottomKeyboard>
+        <Button text="Далее"/>
+    </BottomKeyboard>
+</view>
